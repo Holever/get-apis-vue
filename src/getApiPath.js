@@ -4,10 +4,10 @@ const traverse = require("@babel/traverse").default;
 const generator = require('@babel/generator').default;
 const { transformFromAstSync } = require('@babel/core');
 const path = require('path')
-const { baseDir } = require('./config')
+const { baseDir, varsPath } = require('./config')
 
 // 用到的变量配置
-let varsConfigFile = path.join(baseDir, './src/common/js/config.js')
+let varsConfigFile = path.join(baseDir, varsPath)
 
 let configContent = fse.readFileSync(varsConfigFile, {encoding: 'utf-8'})
 
